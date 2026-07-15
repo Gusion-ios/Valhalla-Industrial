@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compara productos de seguridad industrial lado a lado - Safeguard Industrial">
+    <meta name="keywords" content="comparador, productos, EPP, cascos, andamios, especificaciones técnicas">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Comparador de Productos - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     No forma parte del menú principal, se accede desde el
+     Catálogo o desde Detalle de Producto
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo01.jpeg" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="container-comparador">
+
+    <div class="titulo-comparador">
+        <h2>COMPARADOR DE PRODUCTOS</h2>
+        <p>Selecciona hasta 3 productos y compara sus especificaciones técnicas lado a lado</p>
+    </div>
+
+    <!-- ============================================================
+         SELECTORES — 3 productos a comparar
+         ============================================================ -->
+    <div class="selectores-comparador">
+
+        <select id="producto1">
+            <option value="">Producto 1 — Selecciona</option>
+            <option value="casco">Casco de Seguridad Pro</option>
+            <option value="arnes">Arnés Anticaídas</option>
+            <option value="extintor">Extintor PQS 6kg</option>
+            <option value="traje">Traje Químico Tyvek</option>
+            <option value="andamio">Andamio Modular</option>
+        </select>
+
+        <select id="producto2">
+            <option value="">Producto 2 — Selecciona</option>
+            <option value="casco">Casco de Seguridad Pro</option>
+            <option value="arnes">Arnés Anticaídas</option>
+            <option value="extintor">Extintor PQS 6kg</option>
+            <option value="traje">Traje Químico Tyvek</option>
+            <option value="andamio">Andamio Modular</option>
+        </select>
+
+        <select id="producto3">
+            <option value="">Producto 3 — Selecciona</option>
+            <option value="casco">Casco de Seguridad Pro</option>
+            <option value="arnes">Arnés Anticaídas</option>
+            <option value="extintor">Extintor PQS 6kg</option>
+            <option value="traje">Traje Químico Tyvek</option>
+            <option value="andamio">Andamio Modular</option>
+        </select>
+
+    </div>
+
+    <!-- CTA — genera la tabla -->
+    <button class="btn-comparar" id="btn-comparar">
+        COMPARAR PRODUCTOS
+    </button>
+
+    <!-- ============================================================
+         RESULTADO — Tabla generada dinámicamente por JS
+         ============================================================ -->
+    <div class="wrapper-tabla-comparador" id="zona-resultado">
+        <p class="mensaje-vacio-comparador">
+            Selecciona al menos 2 productos y presiona "Comparar Productos" para ver la tabla.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     REDES SOCIALES
+     ============================================================ -->
+<div class="footer-blog-rrss">
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="File/FB.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+        <img src="File/IG.png" alt="Instagram">
+    </a>
+    <a href="https://wa.me/51999999999" target="_blank" title="WhatsApp">
+        <img src="File/WS.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="File/YT.png" alt="YouTube">
+    </a>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

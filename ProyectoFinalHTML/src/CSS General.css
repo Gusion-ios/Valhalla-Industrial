@@ -1,0 +1,3768 @@
+/* ============================================================
+   PROYECTO: VALHALLA INDUSTRIAL
+   ARCHIVO:  CSS General.css (Página de Inicio)
+   DESCRIPCIÓN: Estilos para la página principal del sitio
+   ============================================================ */
+
+
+/* ===== RESET GENERAL ===== */
+/* Elimina márgenes y rellenos por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+/* Fondo con patrón de circuitos electrónicos (imagen SVG o PNG) */
+body {
+    background-image: url("File/Pagina_Principal-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ============================================================
+   HEADER — Barra de navegación principal
+   Sticky: se queda fija al hacer scroll
+   ============================================================ */
+.header {
+    background: white;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    border-bottom: 3px solid #a4ff00; /* Línea de marca, sutil pero presente */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Se mantiene encima de todo el contenido */
+}
+
+/* Grid del header: logo | 5 enlaces | botón */
+.row-1 {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(7, 1fr) 1.9fr;
+    align-items: center;
+    padding: 12px 30px;
+    gap: 18px;
+}
+
+
+/* ============================================================
+   LOGO — Imagen de marca
+   ============================================================ */
+.Logo {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding-right: 18px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08); /* Separa el logo del menú */
+}
+
+.Logo img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15)); /* Nitidez sin lavar el color */
+    transition: transform 0.3s ease;
+}
+
+/* El logo "respira" levemente al pasar el mouse — detalle comercial */
+.Logo:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ============================================================
+   MENÚ DE NAVEGACIÓN
+   ============================================================ */
+.row-1 h2 {
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+}
+
+/* El link es el elemento real clickeable — se elimina el azul nativo */
+.row-1 h2 a {
+    display: inline-block;
+    position: relative;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 2px;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+/* Subrayado animado en verde neón — crece desde el centro al hacer hover */
+.row-1 h2 a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #a4ff00;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.row-1 h2 a:hover {
+    color: #000;
+}
+
+.row-1 h2 a:hover::after {
+    width: 100%;
+    left: 0%;
+}
+
+/* Estado ACTIVO — página actual resaltada de forma permanente */
+.row-1 h2 a.activo {
+    color: #6fae00; /* Verde neón oscurecido para buen contraste sobre blanco */
+}
+
+.row-1 h2 a.activo::after {
+    width: 100%;
+    left: 0%;
+}
+
+
+/* ============================================================
+   BOTÓN PRINCIPAL — Header (Solicitar Asesoría)
+   Con brillo pulsante para llamar la atención (CTA comercial)
+   ============================================================ */
+.btn-principal {
+    background: #0a0a0a;
+    color: white;
+    border: 2px solid #a4ff00;
+    border-radius: 6px;
+    padding: 11px 16px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    animation: pulso-cta 2.6s ease-in-out infinite; /* Brillo respirando */
+}
+
+.btn-principal:hover {
+    background: #a4ff00;
+    color: black;
+    transform: translateY(-2px);
+    animation-play-state: paused; /* Se detiene el pulso al interactuar */
+}
+
+/* Animación de brillo pulsante — refuerza la sensación de "acción disponible" */
+@keyframes pulso-cta {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(164, 255, 0, 0.45);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(164, 255, 0, 0);
+    }
+}
+
+
+
+/* ============================================================
+   HERO — Sección principal de bienvenida
+   Ocupa el 80% de la altura de la pantalla
+   ============================================================ */
+.hero {
+    height: 80vh;
+    background:
+            linear-gradient(to right, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.2)),
+            url("Inicio/File/Fondo.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenido de texto del hero */
+.hero-content {
+    padding-left: 6%;
+    max-width: 700px;
+}
+
+/* Título principal del hero */
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+/* ============================================================
+   BOTÓN HERO — Llamado a la acción del hero
+   ============================================================ */
+.btn-hero {
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 14px 35px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-hero:hover {
+    background: white;
+    transform: translateY(-3px); /* Sube levemente al pasar el mouse */
+}
+
+
+/* ============================================================
+   SECCIÓN OPCIONES — Categorías rápidas debajo del hero
+   3 columnas: Andamios | Cascos | Extintores
+   ============================================================ */
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #1e1e1e;
+}
+
+/* Cada opción individual */
+.opcion {
+    padding: 30px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Elimina borde derecho en la última opción */
+.opcion:last-child {
+    border-right: none;
+}
+
+/* Texto de cada opción */
+.opcion h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Icono de cada opción */
+.opcion img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+    filter: brightness(0) invert(1); /* Lo hace blanco */
+    transition: filter 0.3s;
+}
+
+/* Hover: fondo verde, texto negro */
+.opcion:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+.opcion:hover h3 {
+    color: black;
+}
+
+.opcion:hover img {
+    filter: none; /* Restaura el color original del ícono */
+}
+
+
+/* ============================================================
+   SECCIÓN VIDEO — Video embebido de YouTube
+   ============================================================ */
+.seccion-video {
+    background: #111;
+    padding: 50px 6%;
+    text-align: center;
+}
+
+/* Título de la sección de video */
+.seccion-video h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: #a4ff00;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Subtítulo del video */
+.seccion-video p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* Contenedor del iframe con proporción 16:9 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 45%; /* Proporción 16:9 */
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #a4ff00;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Funciona tanto para iframes de YouTube como para <video> local */
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover; /* Solo afecta a <video>, los iframes lo ignoran */
+}
+
+
+/* ============================================================
+   REDES SOCIALES — Fila de botones circulares
+   ============================================================ */
+.row-4 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 20px;
+    background: #1e1e1e;
+}
+
+/* Botones circulares de redes sociales */
+.row-4 button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #a4ff00;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover en botones de redes: brillo verde neón */
+.row-4 button:hover {
+    background: #a4ff00;
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(164, 255, 0, 0.6);
+}
+
+/* Íconos dentro de los botones */
+.icon-social {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+
+/* ============================================================
+   FOOTER — Pie de página
+   ============================================================ */
+.footer {
+    background: #0a0a0a;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #a4ff00;
+}
+
+/* Texto de copyright */
+.footer p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Links del footer */
+.footer a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #a4ff00;
+}
+
+
+/* ============================================================
+   MEDIA QUERIES — Diseño responsivo
+   Se activa cuando la pantalla es menor a 768px (tablet/móvil)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Header en columna para pantallas pequeñas */
+    .row-1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    /* Hero más pequeño en móvil */
+    .hero {
+        height: 60vh;
+    }
+
+    /* Título más pequeño en móvil */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Opciones en una sola columna */
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+
+    /* Video ocupa más espacio en móvil */
+    .video-wrapper {
+        padding-bottom: 56.25%;
+    }
+
+    /* Footer en columna */
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   PÁGINA 02 — CATÁLOGO DE PRODUCTOS
+   Agregar al final del CSS global (Pagina01Style.css)
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+/* Centra el contenido y limita el ancho máximo */
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.row-2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.row-2 h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00; /* Subrayado verde neón */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+
+/* ===== GRID DE TARJETAS ===== */
+/* 3 columnas iguales con espacio entre ellas */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* ===== TARJETA INDIVIDUAL ===== */
+/* Cada tarjeta tiene imagen de fondo y overlay oscuro */
+.tarjeta {
+    position: relative;  /* Necesario para posicionar h3 y botón encima */
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;    /* La imagen no se sale del borde redondeado */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Capa oscura semitransparente encima de la imagen */
+.tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    transition: background 0.3s;
+}
+
+/* Título de cada tarjeta — posicionado en la parte inferior */
+.tarjeta h3 {
+    position: absolute;
+    bottom: 55px;
+    left: 20px;
+    color: white;
+    font-size: 1rem;
+    z-index: 2; /* Se muestra encima del overlay */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Botón "VER DETALLES" dentro de cada tarjeta */
+.btn-card {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background: #a4ff00;
+    border: none;
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 2;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-card:hover {
+    background: white;
+}
+
+/* Hover en tarjeta: sube y agrega borde verde */
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 3px #a4ff00, 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover: oscurece un poco más el overlay */
+.tarjeta:hover::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Badge "NUEVO" en esquina superior derecha */
+.badge-nuevo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #a4ff00;
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    z-index: 2;
+    transform: rotate(5deg); /* Inclinado levemente */
+}
+
+
+/* ===== IMÁGENES DE FONDO DE CADA TARJETA ===== */
+.bg-andamios  { background: url("Catalogo/File/Andamios.png")  center/cover; }
+.bg-cascos    { background: url("Catalogo/File/Cascos.png")    center/cover; }
+.bg-extintores{ background: url("Catalogo/File/Fire.png")      center/cover; }
+.bg-caidas    { background: url("Catalogo/File/Caida.png")     center/cover; }
+.bg-trajes    { background: url("Catalogo/File/Trajes.png")    center/cover; }
+.bg-senales   { background: url("Catalogo/File/Señales.png")   center/cover; }
+
+/* ===== Videos ===== */
+.video-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Ocultar radios */
+.video-carousel input {
+    display: none;
+}
+
+/* Contenedor de videos */
+.video-carousel .slides {
+    display: grid;
+    grid-template-columns: 100%;
+    position: relative;
+}
+
+.video-carousel video {
+    width: 100%;
+    display: none;
+    border: 2px solid #a4ff00;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Mostrar el video según el radio seleccionado */
+#video1:checked ~ .slides video:nth-child(1),
+#video2:checked ~ .slides video:nth-child(2),
+#video3:checked ~ .slides video:nth-child(3),
+#video4:checked ~ .slides video:nth-child(4) {
+    display: block;
+}
+
+/* Botones de navegación */
+.video-carousel .nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+.video-carousel .nav label {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.video-carousel .nav label:hover {
+    background: #a4ff00;
+}
+
+/* ===== CTA — Llamado a la acción al final del catálogo ===== */
+.cta {
+    text-align: center;
+    margin: 50px 0 20px;
+}
+
+/* Etiqueta CTA visible encima del botón */
+.cta-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.btn-consulta {
+    background: transparent;
+    color: black;
+    border: 2px solid #a4ff00;
+    padding: 15px 50px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-consulta:hover {
+    background: #a4ff00;
+    color: black;
+    transform: translateY(-2px);
+}
+
+
+/* ===== MEDIA QUERIES — Catálogo responsivo ===== */
+@media (max-width: 768px) {
+
+    /* En móvil: 1 columna */
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    /* Título más pequeño */
+    .row-2 h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* En tablet: 2 columnas */
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   PÁGINA 03 — ENLACES RÁPIDOS Y RECURSOS (CORREGIDO)
+   Reemplaza el bloque "PÁGINA 03" completo dentro de CSS General.css
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL DE ENLACES RÁPIDOS ===== */
+.container-enlaces {
+    max-width: 1300px;      /* antes no tenía límite -> por eso se veía angosto y descentrado */
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.row-2-enlaces {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 10px;
+}
+
+.row-2-enlaces h2 {
+    font-size: 2.5rem;
+    color: black;
+    letter-spacing: 3px;
+    text-align: center;
+    border-bottom: 3px solid #a4ff00;
+    padding-bottom: 10px;
+}
+
+
+/* ===== GRID DE TARJETAS ===== */
+/* 2 columnas fijas en desktop -> ya no depende de auto-fit
+   (que fallaba y colapsaba todo a una sola columna) */
+.tarjetas-enlaces {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px 0;
+    margin: 20px 0;
+}
+
+
+/* ===== TARJETA BASE ===== */
+/* Sin altura fija: con CSS Grid las tarjetas de una misma
+   fila se estiran solas a la altura de la más alta (stretch),
+   así ya no queda espacio vacío ni el botón "flotando" */
+.tarjeta-enlace {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    min-height: 220px;
+    padding-bottom: 64px; /* deja espacio reservado para el botón inferior */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-enlace-gris {
+    background-color: #f0f0f0;
+}
+
+.tarjeta-enlace:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-enlace h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    margin: 20px 16px 10px;
+    letter-spacing: 1px;
+}
+
+/* Texto descriptivo de las tarjetas simples (Calculadora, Comparador, Pedido) */
+.tarjeta-enlace > p {
+    padding: 0 16px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.tarjeta-enlace .btn-enlace {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #a4ff00;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-enlace .btn-enlace:hover {
+    background: black;
+    color: #a4ff00;
+    box-shadow: 0 0 12px #a4ff00;
+}
+
+
+/* ===== TARJETA 1: CATEGORÍAS DE PRODUCTOS ===== */
+.cat-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    margin: 4px 16px 16px;
+}
+
+.cat-productos .item-cat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cat-productos img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cat-productos p {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+}
+
+
+/* ===== TARJETA 2: BLOG — imagen de fondo ===== */
+.tarjeta-img-blog {
+    position: relative;
+    flex-grow: 1;
+    min-height: 180px;
+    background-image: url("EnlacesRapidos/File/GuiasDeSeguridad.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ===== TARJETA 3: FORMULARIO DE CONTACTO / INFO ===== */
+.info-contacto-enlaces {
+    margin: 6px 0 0;
+    padding: 0 16px;
+    text-align: left;
+}
+
+.item-contacto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.item-contacto img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.item-contacto p {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* ===== TARJETA 4: NORMAS Y CERTIFICACIONES ===== */
+.certificaciones-enlaces {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 8px;
+    flex-grow: 1;
+}
+
+.certificaciones-enlaces .item-cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+/* antes estaba en 120px -> desproporcionado frente al resto de tarjetas */
+.certificaciones-enlaces img {
+    height: 60px;
+    object-fit: contain;
+}
+
+.certificaciones-enlaces p {
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* ===== MAPA — iframe de Google Maps al final ===== */
+.seccion-mapa {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.seccion-mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(30%);
+}
+
+
+/* ===== MEDIA QUERIES — Responsivo ===== */
+@media (max-width: 1024px) {
+    .tarjetas-enlaces {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-2-enlaces h2 {
+        font-size: 1.6rem;
+    }
+
+    .cat-productos {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   PÁGINA 04 — COTIZACIÓN
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL COTIZACIÓN ===== */
+.container-cotizacion {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-cotizacion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-cotizacion h2 {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+/* ===== GRID PRINCIPAL: formulario izq | info der ===== */
+.grid-cotizacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+
+/* ===== COLUMNA FORMULARIO ===== */
+.columna-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas de los campos */
+.columna-form label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+/* Campos del formulario */
+.columna-form input,
+.columna-form select,
+.columna-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #eaeaea;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #333;
+    transition: background 0.3s;
+}
+
+/* Foco en campos — borde verde neón */
+.columna-form input:focus,
+.columna-form select:focus,
+.columna-form textarea:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #a4ff00;
+}
+
+/* Área de texto para descripción */
+.columna-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Botón enviar — ancho completo */
+.btn-enviar {
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-enviar:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+
+/* ===== COLUMNA INFORMACIÓN DE CONTACTO ===== */
+.columna-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Caja de datos de contacto */
+.caja-contacto {
+    background: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.caja-contacto h3 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #a4ff00;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+/* Cada fila de dato de contacto */
+.dato-contacto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.dato-contacto img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Íconos blancos */
+}
+
+.dato-contacto p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ===== RECURSOS DESTACADOS ===== */
+/* Sección de contenido destacado con enlaces internos */
+.recursos-destacados {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recursos-destacados h3 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #a4ff00;
+    padding-bottom: 8px;
+}
+
+/* Lista de recursos destacados */
+.recursos-destacados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Cada enlace interno de recurso */
+.recursos-destacados ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.recursos-destacados ul li a::before {
+    content: "→";
+    color: #a4ff00;
+    font-weight: bold;
+}
+
+.recursos-destacados ul li a:hover {
+    color: #a4ff00;
+}
+
+
+/* ===== MEDIA QUERIES — Cotización responsiva ===== */
+@media (max-width: 768px) {
+
+    /* En móvil: columna única */
+    .grid-cotizacion {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-cotizacion h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ============================================================
+   PÁGINA 05 — BLOG Y GUÍAS DE SEGURIDAD INDUSTRIAL
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL DEL BLOG ===== */
+.container-blog {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-blog {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-blog h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+/* ===== GRID DE TARJETAS DEL BLOG ===== */
+/* 3 columnas iguales, 2 filas */
+.tarjetas-blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+
+/* ===== TARJETA DE ARTÍCULO ===== */
+/* Imagen de fondo con overlay oscuro y texto encima */
+.tarjeta-blog {
+    position: relative;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay oscuro sobre la imagen */
+.tarjeta-blog::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+/* Título del artículo — esquina inferior izquierda */
+.tarjeta-blog h3 {
+    position: absolute;
+    bottom: 55px;
+    left: 16px;
+    right: 16px;
+    color: white;
+    font-size: 0.9rem;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.3;
+}
+
+/* Botón "VER DETALLES" dentro de cada tarjeta */
+.tarjeta-blog .btn-blog {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 6px 16px;
+    font-size: 0.72rem;
+    font-weight: bold;
+    z-index: 2;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tarjeta-blog .btn-blog:hover {
+    background: white;
+}
+
+/* Hover en tarjeta: sube y borde verde */
+.tarjeta-blog:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 3px #a4ff00, 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.tarjeta-blog:hover::before {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===== IMÁGENES DE FONDO DE CADA ARTÍCULO ===== */
+.bg-arnes     { background-image: url("BlogGuias/File/caidas.webp"); }
+.bg-extintor  { background-image: url("BlogGuias/File/extintores.jpg"); }
+.bg-casco-uso { background-image: url("BlogGuias/File/cascos.webp"); }
+.bg-andamio2  { background-image: url("BlogGuias/File/andamios.webp"); }
+.bg-caida2    { background-image: url("BlogGuias/File/cuerdas.webp"); }
+.bg-traje2    { background-image: url("BlogGuias/File/trajes.png"); }
+
+
+/* ===== SECCIÓN RECURSOS DESTACADOS ===== */
+/* Aparece entre las tarjetas y el CTA */
+.recursos-blog {
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+.recursos-blog p {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+
+/* ===== FOOTER REDES SOCIALES DEL BLOG ===== */
+/* Fila de íconos de redes con enlaces externos reales */
+.footer-blog-rrss {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 20px;
+    background: #1e1e1e;
+}
+
+.footer-blog-rrss a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #a4ff00;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+.footer-blog-rrss a:hover {
+    background: #a4ff00;
+    transform: translateY(-4px);
+    box-shadow: 0 0 14px rgba(164, 255, 0, 0.6);
+}
+
+.footer-blog-rrss img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+
+/* ===== MEDIA QUERIES — Blog responsivo ===== */
+@media (max-width: 768px) {
+
+    /* En móvil: 1 columna */
+    .tarjetas-blog {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-blog h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* En tablet: 2 columnas */
+    .tarjetas-blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   PÁGINA 07 — MAPA DE DISTRIBUIDORES
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-distribuidores {
+    text-align: center;
+    padding: 40px 30px 20px;
+}
+
+.titulo-distribuidores h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-distribuidores p {
+    color: rgba(0, 0, 0, 0.55);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* ===== FILTROS DE CIUDAD ===== */
+/* Fila de botones: Todos | Arequipa | Lima | Cusco */
+.filtros-ciudad {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-filtro {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Filtro activo — verde neón */
+.btn-filtro.activo,
+.btn-filtro:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+
+/* ===== GRID PRINCIPAL: sidebar izq | mapa der ===== */
+.grid-distribuidores {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    min-height: 520px;
+    margin: 0 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ===== BARRA LATERAL — Lista de distribuidores ===== */
+.sidebar-distribuidores {
+    background: #1a1a1a;
+    overflow-y: auto;   /* Scroll si hay muchos distribuidores */
+    padding: 0;
+}
+
+/* Título de la barra lateral */
+.sidebar-distribuidores .sidebar-titulo {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #a4ff00;
+    text-transform: uppercase;
+    padding: 18px 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tarjeta individual de distribuidor */
+.tarjeta-distribuidor {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.tarjeta-distribuidor:hover {
+    background: rgba(164, 255, 0, 0.07);
+}
+
+/* Nombre del distribuidor */
+.tarjeta-distribuidor h4 {
+    color: #a4ff00;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Fila de dato: ícono + texto */
+.dato-distribuidor {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.dato-distribuidor img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.dato-distribuidor p {
+    margin: 0;
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+/* Botón "Ver en mapa" dentro de la tarjeta */
+.btn-ver-mapa {
+    margin-top: 10px;
+    background: transparent;
+    color: #a4ff00;
+    border: 1px solid #a4ff00;
+    padding: 5px 14px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-ver-mapa:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+
+/* ===== COLUMNA MAPA — iframe Google Maps ===== */
+.col-mapa {
+    position: relative;
+    background: #e8e8e8;
+}
+
+/* Barra encima del mapa con contador */
+.mapa-header {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 11px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    z-index: 10;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.mapa-header span {
+    color: #a4ff00;
+    font-weight: bold;
+}
+
+/* iframe del mapa */
+.col-mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+/* ===== BANNER "¿NO ENCUENTRAS DISTRIBUIDOR?" ===== */
+/* Banner de fondo negro con íconos y CTA */
+.banner-distribuidores {
+    background: #111;
+    padding: 40px 30px;
+    margin: 30px 30px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.banner-distribuidores h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.banner-distribuidores p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+/* Fila de 3 íconos informativos */
+.banner-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 28px;
+}
+
+.banner-icono-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+}
+
+.banner-icono-item span {
+    font-size: 22px;
+}
+
+
+/* ===== VIDEO — Sección de video en el banner ===== */
+/* Reutiliza .seccion-video y .video-wrapper del CSS global */
+.seccion-video-dist {
+    background: #0d0d0d;
+    padding: 40px 6%;
+    text-align: center;
+    margin: 0 30px 30px;
+    border-radius: 10px;
+}
+
+.seccion-video-dist h2 {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: #a4ff00;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.seccion-video-dist p {
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+
+/* ===== MEDIA QUERIES — Distribuidores responsivo ===== */
+@media (max-width: 768px) {
+
+    /* Sidebar encima del mapa en móvil */
+    .grid-distribuidores {
+        grid-template-columns: 1fr;
+        margin: 0 10px;
+    }
+
+    /* Mapa con altura fija en móvil */
+    .col-mapa {
+        height: 300px;
+    }
+
+    .banner-distribuidores {
+        margin: 20px 10px 0;
+    }
+
+    .banner-iconos {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .seccion-video-dist {
+        margin: 0 10px 20px;
+    }
+
+    .filtros-ciudad {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ============================================================
+   PÁGINA 06 — DETALLE DE PRODUCTO
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== SUBTÍTULO DE LA PÁGINA ===== */
+/* Título del producto centrado */
+.subtitul {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    padding-bottom: 8px;
+    margin: 30px auto 25px;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* Subtítulos secundarios: CTA y Productos Relacionados */
+.subtitul2 {
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+}
+
+
+/* ===== GRID PRODUCTO: imagen izq | info der ===== */
+.producto {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 0 30px;
+}
+
+/* Imagen del producto */
+.producto-img img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.producto-img img:hover {
+    transform: scale(1.03); /* Zoom suave al pasar el mouse */
+}
+
+
+/* ===== TABLA DE ESPECIFICACIONES ===== */
+/* Filas de especificaciones: strong | span */
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+/* Cada fila de especificación */
+.producto-info div {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    border-bottom: 1px solid #eee;
+    padding: 11px 16px;
+    align-items: center;
+}
+
+/* Última fila sin borde */
+.producto-info div:last-of-type {
+    border-bottom: none;
+}
+
+/* Etiqueta de la especificación — fondo gris */
+.producto-info strong {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+    background: #f5f5f5;
+    text-transform: uppercase;
+    padding: 11px 12px;
+    margin: -11px -16px -11px -16px; /* Ocupa toda la celda */
+    display: flex;
+    align-items: center;
+}
+
+/* Valor de la especificación */
+.producto-info span {
+    font-size: 13px;
+    color: #444;
+    padding-left: 16px;
+}
+
+/* Botón VER DETALLES al final de la tabla */
+.producto-info .button1 {
+    align-self: flex-end;
+    margin: 16px 16px 16px auto;
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 10px 28px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    width: fit-content;
+}
+
+.producto-info .button1:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+
+/* ===== BOTÓN HACER CONSULTA — CTA ===== */
+.container2 {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.button3 {
+    background: transparent;
+    color: black;
+    border: 2px solid #a4ff00;
+    padding: 12px 40px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.button3:hover {
+    background: #a4ff00;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.button3 h4 {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+
+/* ===== PRODUCTOS RELACIONADOS — row-4 ===== */
+/* Grid de tarjetas relacionadas con imagen de fondo */
+.row-4 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 30px 30px;
+}
+
+/* Tarjeta de producto relacionado */
+.card2 {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay oscuro en tarjeta relacionada */
+.card2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    transition: background 0.3s;
+}
+
+/* Hover en tarjeta relacionada */
+.card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 2px #a4ff00, 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card2:hover::before {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Botón dentro de la tarjeta relacionada */
+.button2 {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.button2 h4 {
+    margin: 0;
+    color: white;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Imágenes de fondo de productos relacionados */
+.img21 { background-image: url("DetalleProducto/File/guantes.webp"); }
+.img22 { background-image: url("DetalleProducto/File/gafas.jpg"); }
+
+
+/* ===== FOOTER CON REDES SOCIALES ===== */
+/* Footer con redes y copyright */
+.footer {
+    background: #0a0a0a;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #a4ff00;
+    margin-top: 20px;
+}
+
+/* Contenedor de íconos de redes */
+.redes {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Cada ícono de red social */
+.redes a img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(0) invert(1); /* Íconos blancos */
+}
+
+.redes a img:hover {
+    transform: translateY(-3px);
+    filter: brightness(1) invert(0) sepia(1) saturate(10) hue-rotate(60deg); /* Verde neón */
+}
+
+/* Texto de copyright */
+.footer p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+
+/* ===== MEDIA QUERIES — Detalle responsivo ===== */
+@media (max-width: 768px) {
+
+    /* Columna única en móvil */
+    .producto {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    /* Tarjetas relacionadas apiladas */
+    .row-4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subtitul {
+        font-size: 1rem;
+        padding: 0 15px 8px;
+    }
+}
+
+/* ============================================================
+   PÁGINA 08 — CALCULADORA DE EPP
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-calc {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-calc {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-calc h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-calc p {
+    color: rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* ===== GRID PRINCIPAL: formulario izq | resultados der ===== */
+.grid-calc {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ===== COLUMNA FORMULARIO ===== */
+.col-form-calc {
+    background: white;
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.col-form-calc label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* Inputs y selects del formulario */
+.col-form-calc input,
+.col-form-calc select {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #eaeaea;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.col-form-calc input:focus,
+.col-form-calc select:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 2px #a4ff00;
+}
+
+
+/* ===== PILLS DE NIVEL DE RIESGO ===== */
+/* 3 botones tipo pastilla: Bajo | Medio | Alto */
+.pills-riesgo {
+    display: flex;
+    gap: 10px;
+}
+
+.pill {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+    color: #555;
+}
+
+/* Pill activo — verde neón */
+.pill.activo,
+.pill:hover {
+    background: #a4ff00;
+    border-color: #a4ff00;
+    color: black;
+}
+
+
+/* ===== BOTÓN CALCULAR ===== */
+.btn-calcular {
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 6px;
+}
+
+.btn-calcular:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+
+/* ===== COLUMNA RESULTADOS ===== */
+.col-resultado-calc {
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.col-resultado-calc h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: black;
+    text-transform: uppercase;
+    border-bottom: 2px solid #a4ff00;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+
+/* ===== TABLA DE RESULTADOS ===== */
+.tabla-calc {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabla-calc th {
+    background: #1a1a1a;
+    color: #a4ff00;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 10px 12px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tabla-calc td {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+/* Filas alternas con fondo gris */
+.tabla-calc tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
+.tabla-calc tr:hover td {
+    background: rgba(164,255,0,0.08);
+}
+
+
+/* ===== BADGES DE PRIORIDAD ===== */
+.badge-alta   { background: #e74c3c; color: white; padding: 3px 10px; border-radius: 10px; font-size: 10px; font-weight: bold; }
+.badge-media  { background: #f39c12; color: white; padding: 3px 10px; border-radius: 10px; font-size: 10px; font-weight: bold; }
+.badge-baja   { background: #27ae60; color: white; padding: 3px 10px; border-radius: 10px; font-size: 10px; font-weight: bold; }
+
+
+/* ===== MÉTRICAS RESUMEN ===== */
+/* 3 cards debajo de la tabla: total | presupuesto | norma */
+.metricas-calc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.metrica-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.metrica-card span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.metrica-card strong {
+    font-size: 1.3rem;
+    color: #a4ff00;
+}
+
+
+/* ===== PASOS "CÓMO FUNCIONA" ===== */
+.pasos-calc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0 30px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.paso-item {
+    text-align: center;
+}
+
+/* Número del paso en círculo verde */
+.paso-numero {
+    width: 44px;
+    height: 44px;
+    background: #a4ff00;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 12px;
+}
+
+.paso-item p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* ===== BANNER CTA FINAL ===== */
+.banner-calc {
+    background: #111;
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.banner-calc h3 {
+    font-size: 1.3rem;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.banner-calc p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+
+/* ===== MEDIA QUERIES — Calculadora responsiva ===== */
+@media (max-width: 768px) {
+
+    .grid-calc {
+        grid-template-columns: 1fr;
+    }
+
+    .metricas-calc {
+        grid-template-columns: 1fr;
+    }
+
+    .pasos-calc {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-calc h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ============================================================
+   PÁGINA 09 — PREGUNTAS FRECUENTES (FAQ)
+   Agregar al final del CSS global
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL FAQ ===== */
+.container-faq {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-faq {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-faq h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-faq p {
+    color: rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* ===== GRID PRINCIPAL: sidebar izq | acordeón der ===== */
+.grid-faq {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ===== BARRA LATERAL — Categorías ===== */
+.sidebar-faq {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 90px; /* Se queda fija al hacer scroll debajo del header */
+}
+
+/* Título de la barra lateral */
+.sidebar-faq .sidebar-faq-titulo {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #a4ff00;
+    text-transform: uppercase;
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Cada item de categoría */
+.sidebar-faq ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-faq ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Enlace de categoría */
+.sidebar-faq ul li a {
+    display: block;
+    padding: 13px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, border-left 0.3s;
+    border-left: 3px solid transparent;
+}
+
+/* Categoría activa — borde verde neón */
+.sidebar-faq ul li a.activo,
+.sidebar-faq ul li a:hover {
+    color: #a4ff00;
+    background: rgba(164,255,0,0.06);
+    border-left: 3px solid #a4ff00;
+}
+
+
+/* ===== ACORDEÓN DE PREGUNTAS ===== */
+.acordeon {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Cada item del acordeón */
+.acordeon-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s;
+}
+
+.acordeon-item:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+/* Cabecera del acordeón — pregunta + ícono +/- */
+.acordeon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.acordeon-header:hover {
+    background: #f9f9f9;
+}
+
+/* Texto de la pregunta */
+.acordeon-header h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Ícono +/- del acordeón */
+.acordeon-icono {
+    width: 28px;
+    height: 28px;
+    background: #a4ff00;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Acordeón abierto — rota el ícono */
+.acordeon-item.abierto .acordeon-icono {
+    transform: rotate(45deg);
+    background: black;
+    color: #a4ff00;
+}
+
+/* Cuerpo del acordeón — respuesta oculta por defecto */
+.acordeon-body {
+    display: none;
+    padding: 0 20px 18px;
+    border-left: 3px solid #a4ff00;
+    background: rgba(164,255,0,0.04);
+}
+
+/* Acordeón abierto — muestra la respuesta */
+.acordeon-item.abierto .acordeon-body {
+    display: block;
+}
+
+/* Texto de la respuesta */
+.acordeon-body p {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ===== SECCIÓN "¿NO ENCONTRASTE TU RESPUESTA?" ===== */
+.faq-no-encontro {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.faq-no-encontro p {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+/* Botón contactar asesor */
+.btn-asesor {
+    background: #1a1a1a;
+    color: #a4ff00;
+    border: 2px solid #a4ff00;
+    padding: 10px 24px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.btn-asesor:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+
+/* ===== BANNER CTA FINAL ===== */
+.banner-faq {
+    background: #111;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.banner-faq h3 {
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+
+/* ===== MEDIA QUERIES — FAQ responsivo ===== */
+@media (max-width: 768px) {
+
+    /* Sidebar encima del acordeón en móvil */
+    .grid-faq {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sidebar deja de ser sticky en móvil */
+    .sidebar-faq {
+        position: static;
+    }
+
+    .titulo-faq h2 {
+        font-size: 1.4rem;
+    }
+
+    .banner-faq {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   PÁGINA 10 — ASESORÍA TÉCNICA
+   Agregar al final del CSS global (CSS General.css)
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-asesoria {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px 30px;
+}
+
+
+/* ===== HERO DE LA PÁGINA — banner de valor ===== */
+.hero-asesoria {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 60px 6% 50px;
+    margin-bottom: 30px;
+}
+
+.hero-asesoria .etiqueta-gratis {
+    display: inline-block;
+    background: #a4ff00;
+    color: black;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.hero-asesoria h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero-asesoria p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-asesoria {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-asesoria h2 {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+/* ===== GRID: formulario izq | resultado/info der ===== */
+.grid-asesoria {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ===== COLUMNA FORMULARIO ===== */
+.col-form-asesoria {
+    background: white;
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.col-form-asesoria label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.col-form-asesoria input,
+.col-form-asesoria select,
+.col-form-asesoria textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #eaeaea;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #333;
+    transition: background 0.3s;
+}
+
+.col-form-asesoria input:focus,
+.col-form-asesoria select:focus,
+.col-form-asesoria textarea:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 2px #a4ff00;
+}
+
+.col-form-asesoria textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* Fila de dos campos lado a lado */
+.fila-doble-asesoria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+/* ===== PILLS DE URGENCIA ===== */
+.pills-urgencia {
+    display: flex;
+    gap: 10px;
+}
+
+.pill-urgencia {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background: white;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+    color: #555;
+}
+
+.pill-urgencia.activo,
+.pill-urgencia:hover {
+    background: #a4ff00;
+    border-color: #a4ff00;
+    color: black;
+}
+
+
+/* ===== BOTÓN ENVIAR SOLICITUD ===== */
+.btn-enviar-asesoria {
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 6px;
+}
+
+.btn-enviar-asesoria:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+
+/* ===== COLUMNA RESULTADO DINÁMICO (generado con JS) ===== */
+.col-resultado-asesoria {
+    background: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    padding: 26px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.col-resultado-asesoria h3 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #a4ff00;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+#resultado-asesoria {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    min-height: 60px;
+}
+
+/* Resaltado del tiempo de respuesta estimado */
+#resultado-asesoria strong {
+    color: #a4ff00;
+    font-size: 1.1rem;
+}
+
+
+/* ===== PASOS "CÓMO FUNCIONA LA ASESORÍA" ===== */
+.pasos-asesoria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0 30px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.paso-asesoria-item {
+    text-align: center;
+}
+
+.paso-asesoria-icono {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.paso-asesoria-item h4 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.paso-asesoria-item p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* ===== MEDIA QUERIES — Asesoría responsiva ===== */
+@media (max-width: 768px) {
+
+    .grid-asesoria {
+        grid-template-columns: 1fr;
+    }
+
+    .fila-doble-asesoria {
+        grid-template-columns: 1fr;
+    }
+
+    .pasos-asesoria {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-asesoria h1 {
+        font-size: 1.4rem;
+    }
+
+    .titulo-asesoria h2 {
+        font-size: 1.2rem;
+    }
+}
+
+#andamios,
+#cascos,
+#extintores {
+    scroll-margin-top: 110px;
+}
+
+/* ============================================================
+   PÁGINA 11 — COMPARADOR DE PRODUCTOS
+   Agregar al final del CSS General.css
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-comparador {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px 30px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-comparador {
+    text-align: center;
+    margin: 35px 0 30px;
+}
+
+.titulo-comparador h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-comparador p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* ===== SELECTORES DE PRODUCTOS ===== */
+.selectores-comparador {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.selectores-comparador select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.selectores-comparador select:focus {
+    outline: none;
+    border-color: #a4ff00;
+}
+
+
+/* ===== BOTÓN COMPARAR ===== */
+.btn-comparar {
+    display: block;
+    margin: 0 auto 30px;
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 14px 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-comparar:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+
+/* ===== TABLA COMPARATIVA — generada dinámicamente por JS ===== */
+.wrapper-tabla-comparador {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tabla-comparador {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.tabla-comparador th {
+    background: #1a1a1a;
+    color: #a4ff00;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 14px 16px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tabla-comparador th:first-child {
+    background: #0a0a0a;
+}
+
+.tabla-comparador td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-comparador td:first-child {
+    font-weight: bold;
+    background: #f5f5f5;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.tabla-comparador tr:hover td {
+    background: rgba(164, 255, 0, 0.06);
+}
+
+.tabla-comparador tr:hover td:first-child {
+    background: rgba(164, 255, 0, 0.12);
+}
+
+/* Mensaje cuando no hay productos seleccionados aún */
+.mensaje-vacio-comparador {
+    text-align: center;
+    padding: 50px 20px;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+
+/* ===== MEDIA QUERIES — Comparador responsivo ===== */
+@media (max-width: 768px) {
+
+    .selectores-comparador {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-comparador h2 {
+        font-size: 1.4rem;
+    }
+
+    .tabla-comparador th,
+    .tabla-comparador td {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   PÁGINA 12 — SEGUIMIENTO DE PEDIDO
+   Agregar al final del CSS General.css
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-seguimiento {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px 30px;
+}
+
+
+/* ===== HERO DE LA PÁGINA ===== */
+.hero-seguimiento {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 60px 6% 50px;
+    margin-bottom: 40px;
+}
+
+.hero-seguimiento h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero-seguimiento p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+/* ===== BOTÓN CONSULTAR PEDIDO (abre el prompt) ===== */
+.zona-consulta {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-consultar-pedido {
+    background: #a4ff00;
+    color: black;
+    border: none;
+    padding: 16px 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-consultar-pedido:hover {
+    background: black;
+    color: #a4ff00;
+    transform: translateY(-2px);
+}
+
+.codigos-ayuda {
+    margin-top: 14px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.codigos-ayuda strong {
+    color: #6fae00;
+}
+
+
+/* ===== RESULTADO DEL SEGUIMIENTO — generado por JS ===== */
+.resultado-seguimiento {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: none; /* Se muestra solo cuando hay un resultado */
+}
+
+.resultado-seguimiento.visible {
+    display: block;
+}
+
+.resultado-seguimiento h3 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: black;
+    margin-bottom: 6px;
+}
+
+.resultado-seguimiento .codigo-mostrado {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 24px;
+}
+
+
+/* ===== BARRA DE PROGRESO — 4 etapas ===== */
+.barra-progreso {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 30px 0 10px;
+}
+
+/* Línea de fondo que conecta los puntos */
+.barra-progreso::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.etapa-progreso {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+}
+
+.punto-etapa {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    transition: background 0.4s;
+}
+
+/* Etapa completada — verde neón */
+.etapa-progreso.completada .punto-etapa {
+    background: #a4ff00;
+    color: black;
+}
+
+/* Etapa actual — negro con anillo verde */
+.etapa-progreso.actual .punto-etapa {
+    background: #0a0a0a;
+    color: #a4ff00;
+    box-shadow: 0 0 0 4px rgba(164, 255, 0, 0.3);
+}
+
+.etapa-progreso p {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.3px;
+}
+
+.etapa-progreso.completada p,
+.etapa-progreso.actual p {
+    color: black;
+    font-weight: bold;
+}
+
+
+/* ===== ESTADO ACTUAL — texto destacado ===== */
+.estado-actual-texto {
+    text-align: center;
+    margin-top: 30px;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(164, 255, 0, 0.08);
+    border-left: 4px solid #a4ff00;
+}
+
+.estado-actual-texto p {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+}
+
+.estado-actual-texto strong {
+    color: #6fae00;
+}
+
+
+/* ===== MEDIA QUERIES — Seguimiento responsivo ===== */
+@media (max-width: 768px) {
+
+    .hero-seguimiento h1 {
+        font-size: 1.4rem;
+    }
+
+    .etapa-progreso p {
+        font-size: 9px;
+    }
+
+    .punto-etapa {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   PÁGINA 13 — SOPORTE TÉCNICO (Ventana Flotante / Chat)
+   Agregar al final del CSS General.css
+   ============================================================ */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-soporte {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+}
+
+
+/* ===== HERO ===== */
+.hero-soporte {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 60px 6% 50px;
+    margin-bottom: 40px;
+}
+
+.hero-soporte h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero-soporte p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+/* ===== CONTENIDO BASE DE LA PÁGINA (detrás de la ventana) ===== */
+.info-soporte {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-info-soporte {
+    background: white;
+    border-radius: 10px;
+    padding: 24px 18px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-info-soporte .icono-soporte {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-info-soporte h4 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.tarjeta-info-soporte p {
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* ============================================================
+   BOTÓN FLOTANTE — Abre el chat (fijo en pantalla)
+   ============================================================ */
+.btn-flotante-chat {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #a4ff00;
+    color: black;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-flotante-chat:hover {
+    transform: scale(1.08);
+    background: black;
+    color: #a4ff00;
+}
+
+
+/* ============================================================
+   VENTANA FLOTANTE DE CHAT — oculta por defecto
+   ============================================================ */
+.ventana-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 26px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 2000;
+
+    /* Oculta por defecto con animación de entrada/salida */
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ventana-chat.abierta {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+/* Cabecera de la ventana flotante */
+.chat-header {
+    background: #0a0a0a;
+    color: white;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header h4 {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.chat-header span {
+    font-size: 10px;
+    color: #a4ff00;
+    display: block;
+    margin-top: 2px;
+}
+
+.btn-cerrar-chat {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Cuerpo del chat — donde aparecen los mensajes */
+.chat-body {
+    height: 260px;
+    overflow-y: auto;
+    padding: 14px;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Burbuja de mensaje del bot */
+.mensaje-bot {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid #eee;
+    padding: 9px 13px;
+    border-radius: 12px 12px 12px 2px;
+    font-size: 12px;
+    color: #333;
+    max-width: 85%;
+    line-height: 1.5;
+}
+
+/* Burbuja de mensaje del usuario */
+.mensaje-usuario {
+    align-self: flex-end;
+    background: #a4ff00;
+    padding: 9px 13px;
+    border-radius: 12px 12px 2px 12px;
+    font-size: 12px;
+    color: black;
+    font-weight: 600;
+    max-width: 85%;
+    line-height: 1.5;
+}
+
+/* Pie del chat — botones de preguntas rápidas */
+.chat-footer {
+    padding: 12px 14px 16px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chat-footer p {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.btn-pregunta-rapida {
+    width: 100%;
+    text-align: left;
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-pregunta-rapida:hover {
+    background: #a4ff00;
+}
+
+
+/* ===== MEDIA QUERIES — Soporte responsivo ===== */
+@media (max-width: 768px) {
+
+    .info-soporte {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-soporte h1 {
+        font-size: 1.4rem;
+    }
+
+    .ventana-chat {
+        right: 14px;
+        bottom: 90px;
+        width: calc(100vw - 28px);
+    }
+
+    .btn-flotante-chat {
+        right: 14px;
+        bottom: 16px;
+    }
+}
+
+/* ============================================================
+   PROYECTO: VALHALLA INDUSTRIAL
+   ARCHIVO:  Inventario.css
+   DESCRIPCIÓN: Estilos para el panel de inventario por sucursal
+   ============================================================ */
+
+
+/* ===== HERO ===== */
+.hero-inventario {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 60px 6% 50px;
+    margin-bottom: 40px;
+}
+
+.hero-inventario h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero-inventario p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container-inventario {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+}
+
+
+/* ===== TÍTULO DE SECCIÓN ===== */
+.titulo-inventario {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-inventario h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: black;
+    border-bottom: 3px solid #a4ff00;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-inventario p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* ===== FILTROS DE SUCURSAL ===== */
+.filtros-inventario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Botón de filtro base */
+.btn-filtro-inv {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Filtro activo y hover */
+.btn-filtro-inv.activo,
+.btn-filtro-inv:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+
+/* ===== MÉTRICAS DE RESUMEN ===== */
+.metricas-inventario {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+/* Card individual de métrica */
+.metrica-inv-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Etiqueta de la métrica */
+.metrica-inv-card span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+/* Valor numérico de la métrica */
+.metrica-inv-card strong {
+    font-size: 1.8rem;
+    color: #a4ff00;
+    font-weight: bold;
+}
+
+
+/* ===== WRAPPER DE LA TABLA — permite scroll horizontal en móvil ===== */
+.wrapper-tabla-inventario {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 24px;
+}
+
+
+/* ===== TABLA PRINCIPAL ===== */
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 700px; /* Evita que se aplaste en pantallas pequeñas */
+}
+
+/* Encabezado de la tabla */
+.tabla-inventario thead th {
+    background: #1a1a1a;
+    color: #a4ff00;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 14px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Primera celda del encabezado (nombre de columna) */
+.tabla-inventario thead th:first-child {
+    background: #0a0a0a;
+    text-align: left;
+    min-width: 160px;
+}
+
+/* Celda del nombre de sucursal */
+.celda-sucursal {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    background: #f5f5f5 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 16px !important;
+    white-space: nowrap;
+}
+
+/* Celdas de datos de stock */
+.tabla-inventario tbody td {
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: filter 0.2s;
+}
+
+/* Hover en fila completa */
+.tabla-inventario tbody tr:hover td {
+    filter: brightness(0.92);
+}
+
+
+/* ===== COLORES CONDICIONALES DE STOCK ===== */
+
+/* Stock crítico — fondo rojo claro, texto rojo oscuro */
+.stock-critico {
+    background-color: #fde8e8;
+    color: #c0392b;
+}
+
+/* Stock medio — fondo amarillo claro, texto naranja oscuro */
+.stock-medio {
+    background-color: #fef9e7;
+    color: #d68910;
+}
+
+/* Stock alto — fondo verde claro, texto verde oscuro */
+.stock-alto {
+    background-color: #eafaf1;
+    color: #1e8449;
+}
+
+
+/* ===== COLUMNA Y CELDA DE TOTALES ===== */
+
+/* Total por fila (última columna) */
+.celda-total-fila {
+    background: #f0f0f0 !important;
+    color: black !important;
+    font-weight: bold;
+    font-size: 13px;
+    border-left: 2px solid #a4ff00;
+}
+
+/* Pie de tabla — fila de totales por columna */
+.tabla-inventario tfoot td {
+    background: #1a1a1a;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 12px 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Total por columna — valor numérico en verde */
+.celda-total-col {
+    color: #a4ff00 !important;
+    font-size: 14px !important;
+}
+
+/* Total general — esquina inferior derecha */
+.celda-total-general {
+    background: #0a0a0a !important;
+    color: #a4ff00 !important;
+    font-size: 15px !important;
+    border-left: 2px solid #a4ff00;
+}
+
+
+/* ===== LEYENDA DE COLORES ===== */
+.leyenda-inventario {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Elemento de la leyenda */
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.leyenda-item p {
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
+
+/* Punto de color de la leyenda */
+.leyenda-punto {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.punto-critico { background-color: #fde8e8; border: 2px solid #c0392b; }
+.punto-medio   { background-color: #fef9e7; border: 2px solid #d68910; }
+.punto-alto    { background-color: #eafaf1; border: 2px solid #1e8449; }
+
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+
+    /* Métricas en 2 columnas en móvil */
+    .metricas-inventario {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-inventario h1 {
+        font-size: 1.4rem;
+    }
+
+    .titulo-inventario h2 {
+        font-size: 1.4rem;
+    }
+
+    .leyenda-inventario {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Métricas en 1 columna en pantallas muy pequeñas */
+    .metricas-inventario {
+        grid-template-columns: 1fr;
+    }
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    min-width: 220px;
+    z-index: 1001;
+    padding: 8px 0;
+}
+
+.nav-dropdown:hover .submenu {
+    display: block;
+}
+
+.nav-dropdown .submenu a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: left;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown .submenu a:hover {
+    background: #a4ff00;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .nav-dropdown .submenu {
+        display: block;
+        position: static;
+        transform: none;
+        box-shadow: none;
+        padding-left: 12px;
+    }
+}

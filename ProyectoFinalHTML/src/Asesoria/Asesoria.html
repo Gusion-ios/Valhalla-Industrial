@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita asesoría técnica gratuita en seguridad industrial - Safeguard Industrial">
+    <meta name="keywords" content="asesoría técnica, consultoría, seguridad industrial, EPP, normativa">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Asesoría Técnica - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     Esta página no forma parte del menú principal, se llega
+     a ella desde el botón "Solicitar Asesoría Técnica"
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo.png" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HERO — Banner de valor: por qué pedir asesoría
+     ============================================================ -->
+<section class="hero-asesoria">
+    <span class="etiqueta-gratis">100% Gratuita</span>
+    <h1>Asesoría Técnica en Seguridad Industrial</h1>
+    <p>Nuestros especialistas certificados te ayudan a identificar qué equipos de protección
+        necesita tu empresa y cómo cumplir con la normativa vigente, sin costo y sin compromiso.</p>
+</section>
+
+
+<div class="container-asesoria">
+
+    <div class="titulo-asesoria">
+        <h2>SOLICITA TU ASESORÍA</h2>
+    </div>
+
+    <!-- ============================================================
+         GRID: formulario izq | resultado dinámico der
+         ============================================================ -->
+    <div class="grid-asesoria">
+
+        <!-- COLUMNA IZQUIERDA — Formulario -->
+        <form class="col-form-asesoria" id="form-asesoria">
+
+            <div class="fila-doble-asesoria">
+                <div>
+                    <label for="nombre-asesoria">Nombre completo</label>
+                    <input type="text" id="nombre-asesoria" placeholder="Ej: Juan Pérez">
+                </div>
+                <div>
+                    <label for="empresa-asesoria">Empresa</label>
+                    <input type="text" id="empresa-asesoria" placeholder="Nombre de tu empresa">
+                </div>
+            </div>
+
+            <div class="fila-doble-asesoria">
+                <div>
+                    <label for="email-asesoria">Email</label>
+                    <input type="email" id="email-asesoria" placeholder="correo@empresa.com">
+                </div>
+                <div>
+                    <label for="telefono-asesoria">Teléfono</label>
+                    <input type="tel" id="telefono-asesoria" placeholder="+51 999 999 999">
+                </div>
+            </div>
+
+            <label for="tipo-asesoria">Tipo de asesoría</label>
+            <select id="tipo-asesoria">
+                <option value="" disabled selected>Selecciona un tipo</option>
+                <option value="auditoria">Auditoría de cumplimiento normativo</option>
+                <option value="seleccion">Selección de EPP adecuado</option>
+                <option value="capacitacion">Capacitación de personal</option>
+                <option value="riesgos">Evaluación de riesgos en planta</option>
+            </select>
+
+            <label>Nivel de urgencia</label>
+            <div class="pills-urgencia">
+                <button type="button" class="pill-urgencia" data-urgencia="baja">Puedo esperar</button>
+                <button type="button" class="pill-urgencia activo" data-urgencia="media">Esta semana</button>
+                <button type="button" class="pill-urgencia" data-urgencia="alta">Urgente</button>
+            </div>
+
+            <label for="descripcion-asesoria">Describe tu necesidad</label>
+            <textarea id="descripcion-asesoria" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+
+            <!-- CTA — Botón de envío -->
+            <button type="button" class="btn-enviar-asesoria" id="btn-enviar-asesoria">
+                ENVIAR SOLICITUD
+            </button>
+
+        </form>
+
+
+        <!-- COLUMNA DERECHA — Resultado dinámico generado con JS -->
+        <div class="col-resultado-asesoria">
+            <h3>Tiempo estimado de respuesta</h3>
+            <p id="resultado-asesoria">
+                Completa el formulario y elige un tipo de asesoría y un nivel de urgencia
+                para ver aquí tu tiempo estimado de respuesta.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================
+         PASOS — Cómo funciona
+         ============================================================ -->
+    <div class="pasos-asesoria">
+        <div class="paso-asesoria-item">
+            <div class="paso-asesoria-icono">📝</div>
+            <h4>1. Cuéntanos tu caso</h4>
+            <p>Completa el formulario con el tipo de asesoría que necesitas</p>
+        </div>
+        <div class="paso-asesoria-item">
+            <div class="paso-asesoria-icono">📞</div>
+            <h4>2. Te contactamos</h4>
+            <p>Un especialista te llama o escribe según la urgencia indicada</p>
+        </div>
+        <div class="paso-asesoria-item">
+            <div class="paso-asesoria-icono">✅</div>
+            <h4>3. Recibe tu plan</h4>
+            <p>Te entregamos recomendaciones técnicas personalizadas, sin costo</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     REDES SOCIALES
+     ============================================================ -->
+<div class="footer-blog-rrss">
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="File/FB.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+        <img src="File/IG.png" alt="Instagram">
+    </a>
+    <a href="https://wa.me/51999999999" target="_blank" title="WhatsApp">
+        <img src="File/WS.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="File/YT.png" alt="YouTube">
+    </a>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

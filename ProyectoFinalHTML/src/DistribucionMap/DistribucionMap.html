@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encuentra nuestros distribuidores en Arequipa, Lima y Cusco - Safeguard Industrial">
+    <meta name="keywords" content="distribuidores, puntos de venta, Arequipa, Lima, Cusco, seguridad industrial">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Mapa de Distribuidores - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer    ></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo.png" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     TÍTULO DE SECCIÓN
+     ============================================================ -->
+<div class="titulo-distribuidores">
+    <h2>NUESTROS DISTRIBUIDORES</h2>
+    <p>Encuentra el punto de venta más cercano a ti</p>
+</div>
+
+
+<!-- ============================================================
+     FILTROS DE CIUDAD — Botones de filtro
+     ============================================================ -->
+<div class="filtros-ciudad">
+    <button class="btn-filtro activo" data-ciudad="todos">Todos</button>
+    <button class="btn-filtro" data-ciudad="arequipa">Arequipa</button>
+    <button class="btn-filtro" data-ciudad="lima">Lima</button>
+    <button class="btn-filtro" data-ciudad="cusco">Cusco</button>
+</div>
+
+
+<!-- ============================================================
+     GRID PRINCIPAL: barra lateral izq | mapa der
+     ============================================================ -->
+<div class="grid-distribuidores">
+
+    <!-- ============================================================
+         BARRA LATERAL — Lista de distribuidores
+         ============================================================ -->
+    <aside class="sidebar-distribuidores">
+
+        <p class="sidebar-titulo">📍 Puntos de distribución</p>
+
+        <!-- Distribuidor 1: Arequipa Centro -->
+        <div class="tarjeta-distribuidor" data-ciudad="arequipa">   <!-- Arequipa Centro -->
+            <h4>Safeguard Arequipa Centro</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. La Marina 302, Arequipa Centro</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 926 5353</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 8:00am – 6:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+        <!-- Distribuidor 2: Cayma -->
+        <div class="tarjeta-distribuidor" data-ciudad="arequipa">   <!-- Cayma -->
+            <h4>Safeguard Cayma</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. Ejército 140, Cayma, Arequipa</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 556 3923</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 8:00am – 6:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+        <!-- Distribuidor 3: Lima Norte -->
+        <div class="tarjeta-distribuidor" data-ciudad="lima">       <!-- Lima Norte -->
+            <h4>Safeguard Lima Norte</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. Túpac Amaru 1580, Independencia, Lima</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 336 3503</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 9:00am – 1:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+        <!-- Distribuidor 4: Miraflores -->
+        <div class="tarjeta-distribuidor" data-ciudad="lima">       <!-- Miraflores -->
+            <h4>Safeguard Miraflores</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. Benavides 420, Miraflores, Lima</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 836 3533</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 9:00am – 1:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+        <!-- Distribuidor 5: Cusco -->
+        <div class="tarjeta-distribuidor" data-ciudad="cusco">      <!-- Cusco -->
+            <h4>Safeguard Cusco</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. La Cultura 800, Cusco</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 836 7962</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 9:00am – 1:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+        <!-- Distribuidor 6: San Borja -->
+        <div class="tarjeta-distribuidor" data-ciudad="lima">       <!-- San Borja -->
+            <h4>Safeguard San Borja</h4>
+            <div class="dato-distribuidor">
+                <img src="File/ubicacion.png" alt="Dirección">
+                <p>Av. Aviación 2760, San Borja, Lima</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/telefono.png" alt="Teléfono">
+                <p>(91) 835 7567</p>
+            </div>
+            <div class="dato-distribuidor">
+                <img src="File/reloj.png" alt="Horario">
+                <p>Lun–Vie 9:00am – 1:00pm</p>
+            </div>
+            <button class="btn-ver-mapa">Ver en mapa</button>
+        </div>
+
+    </aside>
+
+
+    <!-- ============================================================
+         COLUMNA MAPA — iframe Google Maps (enlace externo)
+         ============================================================ -->
+    <div class="col-mapa">
+
+        <!-- Barra informativa encima del mapa — contenido destacado -->
+        <div class="mapa-header">
+            📍 <span>6</span> puntos de distribución en Perú
+        </div>
+
+        <!-- MAPA: iframe de Google Maps — enlace externo -->
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7760697.123456!2d-75.0!3d-9.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f4f1f1f1f1%3A0x1!2sPer%C3%BA!5e0!3m2!1ses!2spe!4v1234567890"
+                title="Mapa de distribuidores Safeguard Industrial en Perú"
+                allowfullscreen
+                loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     BANNER — "¿No encuentras distribuidor cerca?"
+     ============================================================ -->
+<div class="banner-distribuidores">
+
+    <h3>¿No hay un distribuidor cerca de ti?</h3>
+    <p>Realizamos envíos a todo el Perú en 48–72 horas</p>
+
+    <!-- 3 íconos informativos — contenido destacado -->
+    <div class="banner-iconos">
+        <div class="banner-icono-item">
+            <span>📦</span>
+            <p>Envío gratuito +S/500</p>
+        </div>
+        <div class="banner-icono-item">
+            <span>🔒</span>
+            <p>Compra segura</p>
+        </div>
+        <div class="banner-icono-item">
+            <span>📞</span>
+            <p>Asesoría telefónica</p>
+        </div>
+    </div>
+
+    <!-- CTA — Llamado a la acción -->
+    <button class="btn-hero" onclick="location.href='../Asesoria/Asesoria.html'">
+        SOLICITAR ASESORÍA
+    </button>
+
+</div>
+
+<!-- ============================================================
+     REDES SOCIALES — Botones con enlaces externos reales
+     ============================================================ -->
+<div class="footer-blog-rrss">
+
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="File/FB.png" alt="Facebook">
+    </a>
+    <a href="https://www.twitter.com" target="_blank" title="Twitter">
+        <img src="File/X.png" alt="Twitter">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+        <img src="File/LinK.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="File/YT.png" alt="YouTube">
+    </a>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER — Pie de página
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Safeguard Industrial - Equipos de protección personal y seguridad industrial en Perú">
+    <meta name="keywords" content="seguridad industrial, EPP, cascos, arnés, extintores, Arequipa, Perú">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Safeguard Industrial - Inicio</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación principal (sticky)
+     Contiene: logo, menú de opciones, botón de acción
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo01.jpeg" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HERO — Sección de bienvenida / Banner principal
+     Imagen de fondo con texto y llamado a la acción
+     ============================================================ -->
+<section class="hero">
+    <div class="hero-content">
+        <!-- Ícono SVG vectorial — escudo de seguridad -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24" fill="#a4ff00" style="margin-bottom:14px; display:block;">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+        </svg>
+
+        <!-- Título principal -->
+        <h1>
+            EQUIPANDO TU <br>
+            SEGURIDAD: SOLUCIONES <br>
+            INDUSTRIALES INTEGRALES
+        </h1>
+
+        <!-- CTA principal — llamado a la acción -->
+        <button class="btn-hero" onclick="location.href='../Catalogo/Catalogo.html'">
+            VER CATÁLOGO
+        </button>
+
+
+    </div>
+</section>
+
+<marquee behavior="scroll" direction="left" scrollamount="5" style="background:#0a0a0a; color:#a4ff00; padding:10px; font-size:13px; letter-spacing:1px;">
+    🛡️ ENVÍO GRATIS EN COMPRAS MAYORES A S/500 &nbsp;&nbsp;&nbsp; ✅ CERTIFICACIÓN ANSI Z89.1 / OSHA 1910 &nbsp;&nbsp;&nbsp; 📞 ASESORÍA TÉCNICA 100% GRATUITA
+</marquee>
+
+
+<!-- ============================================================
+     OPCIONES — Categorías rápidas de productos
+     3 columnas: Andamios | Cascos | Extintores
+     ============================================================ -->
+<section class="opciones">
+
+    <!-- Opción 1: Andamios -->
+    <div class="opcion" onclick="location.href='../Catalogo/Catalogo.html#andamios'">
+        <img src="File/Andamios.png" alt="Andamios industriales">
+        <h3>ANDAMIOS</h3>
+        <p>Sistemas certificados para trabajo en altura</p>
+    </div>
+
+    <!-- Opción 2: Cascos -->
+    <div class="opcion" onclick="location.href='../Catalogo/Catalogo.html#cascos'">
+        <img src="File/casco.png" alt="Cascos de seguridad">
+        <h3>CASCOS</h3>
+        <p>Protección craneal con norma ANSI Z89.1</p>
+    </div>
+
+    <!-- Opción 3: Extintores -->
+    <div class="opcion" onclick="location.href='../Catalogo/Catalogo.html#extintores'">
+        <img src="File/extintor.png" alt="Extintores industriales">
+        <h3>EXTINTORES</h3>
+        <p>Equipos de supresión para toda industria</p>
+    </div>
+
+</section>
+
+<!-- ============================================================
+     VIDEO — Sección de video institucional (archivo local)
+     CORREGIDO: se cambió <iframe> por <video><source> porque
+     iframe es para incrustar páginas web (YouTube), no archivos
+     .mp4 propios. <video> da controles nativos de reproducción.
+     ============================================================ -->
+<section class="seccion-video">
+
+    <h2>CONOCE NUESTROS PRODUCTOS</h2>
+    <p>Descubre cómo nuestros equipos protegen a miles de trabajadores en Perú</p>
+
+    <!-- Contenedor del video con proporción 16:9 -->
+    <div class="video-wrapper">
+        <!-- VIDEO LOCAL: archivo .mp4 propio de Safeguard Industrial -->
+        <!-- Ruta corregida: ya estamos dentro de la carpeta Inicio/,
+             no se necesita subir con ../Inicio/ otra vez -->
+        <video controls>
+            <source src="File/INICIO.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de este video.
+        </video>
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     REDES SOCIALES — Botones de enlaces externos
+     Íconos circulares con hover de brillo verde neón
+     ============================================================ -->
+<div class="row-4">
+
+    <!-- Facebook — enlace externo -->
+    <div class="Facebook">
+        <button onclick="window.open('https://www.facebook.com', '_blank')" title="Facebook">
+            <img src="File/FB.png" class="icon-social" alt="Facebook">
+        </button>
+    </div>
+
+    <!-- Instagram — enlace externo -->
+    <div class="Instagram">
+        <button onclick="window.open('https://www.instagram.com', '_blank')" title="Instagram">
+            <img src="File/IG.png" class="icon-social" alt="Instagram">
+        </button>
+    </div>
+
+    <!-- WhatsApp — enlace externo -->
+    <div class="Whatsapp">
+        <button onclick="window.open('https://wa.me/51999999999', '_blank')" title="WhatsApp">
+            <img src="File/WS.png" class="icon-social" alt="WhatsApp">
+        </button>
+    </div>
+
+    <!-- X (Twitter) — enlace externo -->
+    <div class="Twitter">
+        <button onclick="window.open('https://www.twitter.com', '_blank')" title="X / Twitter">
+            <img src="File/X.png" class="icon-social" alt="X Twitter">
+        </button>
+    </div>
+
+    <!-- YouTube — enlace externo -->
+    <div class="Youtube">
+        <button onclick="window.open('https://www.youtube.com', '_blank')" title="YouTube">
+            <img src="File/YT.png" class="icon-social" alt="YouTube">
+        </button>
+    </div>
+
+    <!-- Gmail — enlace externo -->
+    <div class="Gmail">
+        <button onclick="window.open('mailto:info@safeguard.com', '_blank')" title="Gmail">
+            <img src="File/GM.webp" class="icon-social" alt="Gmail">
+        </button>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER — Pie de página
+     Copyright y enlaces de navegación rápida
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

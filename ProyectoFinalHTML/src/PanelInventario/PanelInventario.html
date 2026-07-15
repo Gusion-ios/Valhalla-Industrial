@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de inventario por sucursal - Valhalla Industrial">
+    <meta name="keywords" content="inventario, stock, sucursales, EPP, Valhalla Industrial">
+    <meta name="author" content="Valhalla Industrial">
+    <title>Inventario por Sucursal - Valhalla Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo01.jpeg" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero-inventario">
+    <h1>Panel de Inventario</h1>
+    <p>Stock disponible por producto y sucursal — actualizado en tiempo real</p>
+</section>
+
+
+<!-- ============================================================
+     CONTENIDO PRINCIPAL
+     ============================================================ -->
+<div class="container-inventario">
+
+    <!-- Título de sección -->
+    <div class="titulo-inventario">
+        <h2>INVENTARIO POR SUCURSAL</h2>
+        <p>Selecciona una sucursal para filtrar o visualiza el resumen completo</p>
+    </div>
+
+    <!-- Filtros de sucursal -->
+    <div class="filtros-inventario" id="filtros-inventario">
+        <!-- Generados dinámicamente por JS -->
+    </div>
+
+    <!-- Métricas resumen -->
+    <div class="metricas-inventario" id="metricas-inventario">
+        <!-- Generadas dinámicamente por JS -->
+    </div>
+
+    <!-- Tabla principal -->
+    <div class="wrapper-tabla-inventario">
+        <table class="tabla-inventario" id="tabla-inventario">
+            <!-- Generada dinámicamente por JS -->
+        </table>
+    </div>
+
+    <!-- Leyenda de colores -->
+    <div class="leyenda-inventario">
+        <div class="leyenda-item">
+            <span class="leyenda-punto punto-critico"></span>
+            <p>Stock crítico (menos de 10 unidades)</p>
+        </div>
+        <div class="leyenda-item">
+            <span class="leyenda-punto punto-medio"></span>
+            <p>Stock medio (10 a 29 unidades)</p>
+        </div>
+        <div class="leyenda-item">
+            <span class="leyenda-punto punto-alto"></span>
+            <p>Stock alto (30 o más unidades)</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

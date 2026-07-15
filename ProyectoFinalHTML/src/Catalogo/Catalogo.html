@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de productos de seguridad industrial - Safeguard Industrial">
+    <meta name="keywords" content="catálogo, EPP, andamios, cascos, extintores, trajes, seguridad industrial">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Catálogo de Productos - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo01.jpeg" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     CONTENIDO PRINCIPAL — Catálogo de productos
+     ============================================================ -->
+<main class="container">
+
+    <!-- Título de la sección -->
+    <div class="row-2">
+        <h2>CATÁLOGO DE PRODUCTOS</h2>
+    </div>
+
+    <!-- ============================================================
+         TARJETAS DE PRODUCTOS — Grid 3 columnas
+         Cada tarjeta tiene: imagen de fondo, overlay, título, botón
+         CORREGIDO: las 6 tarjetas apuntaban a "DetallesProduc.html"
+         (nombre de archivo incorrecto + sin ruta relativa). El
+         archivo real es DetalleProducto.html dentro de su carpeta.
+         ============================================================ -->
+    <section class="tarjetas">
+
+        <!-- Tarjeta 1: Andamios -->
+        <div id="andamios" class="tarjeta bg-andamios" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <h3>ANDAMIOS INDUSTRIALES</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+        <!-- Tarjeta 2: Cascos -->
+        <div id="cascos" class="tarjeta bg-cascos" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <h3>CASCOS DE SEGURIDAD</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+        <!-- Tarjeta 3: Extintores -->
+        <div id="extintores" class="tarjeta bg-extintores" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <h3>EXTINTORES Y SUPRESIÓN</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+        <!-- Tarjeta 4: Protección contra caídas -->
+        <div class="tarjeta bg-caidas" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <h3>PROTECCIÓN CONTRA CAÍDAS</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+        <!-- Tarjeta 5: Trajes especializados -->
+        <div class="tarjeta bg-trajes" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <h3>TRAJES ESPECIALIZADOS</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+        <!-- Tarjeta 6: Señales — Badge "NUEVO" -->
+        <div class="tarjeta bg-senales" onclick="location.href='../DetalleProducto/DetalleProducto.html'">
+            <span class="badge-nuevo">NUEVO</span>
+            <h3>PROTECCIÓN DE CAÍDAS</h3>
+            <button class="btn-card">VER DETALLES</button>
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         VIDEO — Carrusel de videos locales con radio buttons (CSS)
+         ============================================================ -->
+    <section class="seccion-video">
+        <h2>NUESTROS PRODUCTOS EN ACCIÓN</h2>
+        <p>Conoce cómo se aplican nuestros equipos en obra real</p>
+
+        <div class="video-carousel">
+
+            <!-- Controles del carrusel -->
+            <input type="radio" name="slider" id="video1" checked>
+            <input type="radio" name="slider" id="video2">
+            <input type="radio" name="slider" id="video3">
+            <input type="radio" name="slider" id="video4">
+
+            <!-- Videos -->
+            <div class="slides">
+                <video src="File/Gafas.mp4" controls></video>
+                <video src="File/Andamios.mp4" controls></video>
+                <video src="File/Cascos.mp4" controls></video>
+                <video src="File/Trajes.mp4" controls></video>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="nav">
+                <label for="video1"></label>
+                <label for="video2"></label>
+                <label for="video3"></label>
+                <label for="video4"></label>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CTA — Llamado a la acción
+         CORREGIDO: faltaba la ruta relativa ../Cotizacion/
+         ============================================================ -->
+    <div class="cta">
+        <p class="cta-label">CTA. O LLAMADOS A LA ACCIÓN</p>
+        <button class="btn-consulta" onclick="location.href='../Cotizacion/Cotizacion.html'">
+            HACER CONSULTA
+        </button>
+    </div>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER — Pie de página
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de EPP - Descubre qué equipos necesita tu empresa - Safeguard Industrial">
+    <meta name="keywords" content="calculadora EPP, equipos protección personal, seguridad industrial, presupuesto">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Calculadora de EPP - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo01.jpeg" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-calc">
+
+    <div class="titulo-calc">
+        <h2>CALCULADORA DE EPP</h2>
+        <p>Descubre qué equipos de protección necesita tu empresa según tu industria y número de trabajadores</p>
+    </div>
+
+
+    <div class="grid-calc">
+
+        <div class="col-form-calc">
+
+            <label for="industria">Tipo de industria</label>
+            <select id="industria" name="industria">
+                <option value="" disabled selected>Selecciona tu industria</option>
+                <option value="construccion">Construcción</option>
+                <option value="mineria">Minería</option>
+                <option value="quimica">Industria Química</option>
+                <option value="manufactura">Manufactura</option>
+                <option value="logistica">Logística y Almacén</option>
+            </select>
+
+            <label for="trabajadores">Número de trabajadores</label>
+            <input
+                    type="number"
+                    id="trabajadores"
+                    name="trabajadores"
+                    placeholder="Ej: 50"
+                    min="1"
+                    max="5000">
+
+            <label>Nivel de riesgo</label>
+            <div class="pills-riesgo">
+                <button class="pill" type="button">Bajo</button>
+                <button class="pill" type="button">Medio</button>
+                <button class="pill activo" type="button">Alto</button>
+            </div>
+
+            <label for="frecuencia">Frecuencia de renovación</label>
+            <select id="frecuencia" name="frecuencia">
+                <option value="" disabled selected>Frecuencia</option>
+                <option value="mensual">Mensual</option>
+                <option value="trimestral">Trimestral</option>
+                <option value="semestral">Semestral</option>
+                <option value="anual">Anual</option>
+            </select>
+
+            <button class="btn-calcular" type="button">CALCULAR EPP</button>
+
+        </div>
+
+
+        <div class="col-resultado-calc">
+
+            <h3>EQUIPOS RECOMENDADOS</h3>
+
+            <table id="tabla-resultados-calc" class="tabla-calc">
+                <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Cantidad</th>
+                    <th>Frecuencia</th>
+                    <th>Prioridad</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-calc">
+                <tr>
+                    <td colspan="4" style="text-align:center; color:#999; padding:20px;">
+                        Completa el formulario y presiona "CALCULAR EPP" para ver tu lista personalizada
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="metricas-calc">
+                <div class="metrica-card">
+                    <span>Total equipos</span>
+                    <strong id="metrica-total">—</strong>
+                </div>
+                <div class="metrica-card">
+                    <span>Presupuesto est.</span>
+                    <strong id="metrica-presupuesto">—</strong>
+                </div>
+                <div class="metrica-card">
+                    <span>Norma aplicable</span>
+                    <strong id="metrica-norma">—</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section class="seccion-video">
+        <h2>¿CÓMO ELEGIR TU EPP?</h2>
+        <p>Guía práctica para seleccionar los equipos correctos según tu industria</p>
+        <div class="video-wrapper">
+            <video controls>
+                <source src="File/CalculadoraEPP.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de este video.
+            </video>
+        </div>
+    </section>
+
+
+    <div class="pasos-calc">
+
+        <div class="paso-item">
+            <div class="paso-numero">1</div>
+            <p>Selecciona tu industria y número de trabajadores</p>
+        </div>
+
+        <div class="paso-item">
+            <div class="paso-numero">2</div>
+            <p>Elige el nivel de riesgo y la frecuencia de renovación</p>
+        </div>
+
+        <div class="paso-item">
+            <div class="paso-numero">3</div>
+            <p>Obtén tu lista personalizada de equipos recomendados</p>
+        </div>
+
+    </div>
+
+
+    <div class="banner-calc">
+        <h3>¿LISTO PARA EQUIPAR A TU EQUIPO?</h3>
+        <p>Envíanos tu lista calculada y te preparamos una cotización en menos de 24 horas</p>
+        <button class="btn-hero" onclick="location.href='../Cotizacion/Cotizacion.html'">
+            SOLICITAR COTIZACIÓN
+        </button>
+    </div>
+
+</div>
+
+
+<div class="footer-blog-rrss">
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="File/FB.png" alt="Facebook">
+    </a>
+    <a href="https://www.twitter.com" target="_blank" title="Twitter">
+        <img src="File/X.png" alt="Twitter">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+        <img src="File/LinK.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="File/YT.png" alt="YouTube">
+    </a>
+</div>
+
+
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+</body>
+</html>

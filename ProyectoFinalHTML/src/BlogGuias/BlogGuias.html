@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog y guías de seguridad industrial - Safeguard Industrial">
+    <meta name="keywords" content="blog, guías, seguridad industrial, arnés, extintores, cascos, andamios">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Blog y Guías - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/Logo.png" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     CONTENIDO PRINCIPAL — Blog y Guías
+     ============================================================ -->
+<div class="container-blog">
+
+    <!-- Título de la sección -->
+    <div class="titulo-blog">
+        <h2>BLOG Y GUÍAS DE SEGURIDAD INDUSTRIAL</h2>
+    </div>
+
+    <!-- ============================================================
+         TARJETAS DE ARTÍCULOS — Grid 3x2
+         Cada tarjeta: imagen de fondo, título, botón
+         ============================================================ -->
+    <section class="tarjetas-blog">
+
+        <!-- Artículo 1: Arnés -->
+        <!-- Imagen interna como fondo de tarjeta -->
+        <div class="tarjeta-blog bg-arnes">
+            <h3>CÓMO INSPECCIONAR UN ARNÉS DE SEGURIDAD CONTRA CAÍDAS</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+        <!-- Artículo 2: Extintores -->
+        <div class="tarjeta-blog bg-extintor">
+            <h3>MANTENIMIENTO DE EXTINTORES DE INCENDIOS: UNA GUÍA PRÁCTICA</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+        <!-- Artículo 3: Cascos -->
+        <div class="tarjeta-blog bg-casco-uso">
+            <h3>USO CORRECTO DE CASCOS DE SEGURIDAD EN OBRA</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+        <!-- Artículo 4: Andamios -->
+        <div class="tarjeta-blog bg-andamio2">
+            <h3>ANDAMIOS SEGUROS: MONTAJE Y DESMONTAJE SIN RIESGOS</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+        <!-- Artículo 5: Protección caídas -->
+        <div class="tarjeta-blog bg-caida2">
+            <h3>PROTECCIÓN DE CAÍDAS: SISTEMAS DE ANCLAJE Y LÍNEAS DE VIDA</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+        <!-- Artículo 6: Trajes -->
+        <div class="tarjeta-blog bg-traje2">
+            <h3>TRAJES ESPECIALIZADOS PARA AMBIENTES QUÍMICOS</h3>
+            <button class="btn-blog" onclick="location.href='DetallesProduc.html'">
+                VER DETALLES
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         VIDEO — iframe de YouTube sobre seguridad industrial
+         ============================================================ -->
+    <section class="seccion-video">
+        <h2>GUÍA EN VIDEO: SEGURIDAD EN OBRA</h2>
+        <p>Aprende las mejores prácticas de seguridad industrial con nuestros expertos</p>
+        <div class="video-wrapper">
+            <!-- VIDEO: iframe de YouTube — enlace externo -->
+            <video controls>
+                <source src="File/BLOGGUIAS.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de este video.
+            </video>
+        </div>
+    </section>
+
+
+    <!-- Recursos destacados -->
+    <div class="recursos-blog">
+        <p>Recursos Destacados</p>
+    </div>
+
+    <!-- CTA — Llamado a la acción -->
+    <div class="cta">
+        <button class="btn-consulta" onclick="location.href='../Cotizacion/Cotizacion.html'">
+            HACER CONSULTA
+        </button>
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     REDES SOCIALES — Botones con enlaces externos reales
+     ============================================================ -->
+<div class="footer-blog-rrss">
+
+    <!-- Facebook — enlace externo -->
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="File/FB.png" alt="Facebook">
+    </a>
+
+    <!-- Twitter/X — enlace externo -->
+    <a href="https://www.twitter.com" target="_blank" title="Twitter">
+        <img src="File/X.png" alt="Twitter">
+    </a>
+
+    <!-- LinkedIn — enlace externo -->
+    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+        <img src="File/LinK.png" alt="LinkedIn">
+    </a>
+
+    <!-- YouTube — enlace externo -->
+    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="File/YT.png" alt="YouTube">
+    </a>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER — Pie de página
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

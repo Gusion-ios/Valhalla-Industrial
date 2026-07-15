@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita una cotización de equipos de seguridad industrial - Safeguard Industrial">
+    <meta name="keywords" content="cotización, equipos de seguridad, EPP, presupuesto, Arequipa, Perú">
+    <meta name="author" content="Safeguard Industrial">
+    <title>Cotización - Safeguard Industrial</title>
+    <!-- Tipografía externa incrustada — Barlow Condensed (industrial/técnica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS%20General.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — Barra de navegación (igual en todas las páginas)
+     ============================================================ -->
+<header class="header">
+    <div class="row-1">
+        <div class="Logo">
+            <img src="File/logo_vallhala.png" alt="Safeguard Industrial">
+        </div>
+
+        <div><h2><a href="../Inicio/Inicio.html">INICIO</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="../Catalogo/Catalogo.html">CATÁLOGO ▾</a></h2>
+            <div class="submenu">
+                <a href="../Catalogo/Catalogo.html">Ver Catálogo</a>
+                <a href="../ComparadorProductos/ComparadorProducts.html">Comparador de Productos</a>
+                <a href="../DetalleProducto/DetalleProducto.html">Detalle de Producto</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../BlogGuias/BlogGuias.html">BLOG</a></h2></div>
+        <div><h2><a href="../DistribucionMap/DistribucionMap.html">DISTRIBUIDORES</a></h2></div>
+
+        <div class="nav-dropdown">
+            <h2><a href="#">HERRAMIENTAS ▾</a></h2>
+            <div class="submenu">
+                <a href="../Calculadora/Calculadora.html">Calculadora de EPP</a>
+                <a href="../Seguimiento/Seguimiento.html">Seguimiento de Pedido</a>
+                <a href="../Faq/Faq.html">Preguntas Frecuentes</a>
+                <a href="../Soporte/Soporte.html">Soporte Técnico</a>
+            </div>
+        </div>
+
+        <div><h2><a href="../Cotizacion/Cotizacion.html">CONTACTO</a></h2></div>
+
+        <div class="Boton-1-1">
+            <button class="btn-principal" onclick="location.href='../Asesoria/Asesoria.html'">
+                SOLICITAR ASESORÍA <br> TÉCNICA
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     CONTENIDO PRINCIPAL — Formulario de Cotización
+     ============================================================ -->
+<div class="container-cotizacion">
+
+    <!-- Título de la sección -->
+    <div class="titulo-cotizacion">
+        <h2>SOLICITAR COTIZACIÓN DE EQUIPOS DE SEGURIDAD</h2>
+    </div>
+
+    <!-- Grid: formulario izquierda | info de contacto derecha -->
+    <div class="grid-cotizacion">
+
+        <!-- ============================================================
+             COLUMNA IZQUIERDA — Formulario de cotización
+             ============================================================ -->
+        <form class="columna-form" id="form-cotizacion">
+
+            <!-- Campo: Nombre completo -->
+            <label for="nombre">Nombre completo</label>
+            <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="NOMBRE COMPLETO"
+                    required>
+
+            <!-- Campo: Email profesional -->
+            <label for="email">Email profesional</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="EMAIL PROFESIONAL"
+                    required>
+
+            <!-- Campo: Categoría de producto (select) -->
+            <label for="categoria">Categoría de producto</label>
+            <select id="categoria" name="categoria" required>
+                <option value="" disabled selected>Selecciona una categoría</option>
+                <option value="andamios">Andamios Industriales</option>
+                <option value="cascos">Cascos de Seguridad</option>
+                <option value="extintores">Extintores y Supresión</option>
+                <option value="caidas">Protección Contra Caídas</option>
+                <option value="trajes">Trajes Especializados</option>
+                <option value="señales">Señales de Precaución</option>
+            </select>
+
+            <!-- Campo: Empresa -->
+            <label for="empresa">Empresa</label>
+            <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    placeholder="EMPRESA">
+
+            <!-- Campo: Teléfono -->
+            <label for="telefono">Teléfono</label>
+            <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="TELÉFONO">
+
+            <!-- Campo: Descripción de la solicitud -->
+            <label for="descripcion">Descripción de solicitud</label>
+            <textarea
+                    id="descripcion"
+                    name="descripcion"
+                    placeholder="DESCRIPCIÓN DE SOLICITUD"
+                    required></textarea>
+
+            <!-- CTA — Botón de envío -->
+            <button type="button" class="btn-enviar" id="btn-enviar-cotizacion">
+                ENVIAR SOLICITUD
+            </button>
+
+        </form>
+
+
+        <!-- ============================================================
+             COLUMNA DERECHA — Información de contacto + Recursos
+             ============================================================ -->
+        <div class="columna-info">
+
+            <!-- Caja de información de contacto -->
+            <div class="caja-contacto">
+                <h3>Información de Contacto</h3>
+
+                <!-- Teléfono -->
+                <div class="dato-contacto">
+                    <img src="File/telefono.png" alt="Teléfono">
+                    <p>+60 282 334 300</p>
+                </div>
+
+                <!-- Email -->
+                <div class="dato-contacto">
+                    <img src="File/email.png" alt="Email">
+                    <p>info@safeguard.com</p>
+                </div>
+
+                <!-- Dirección -->
+                <div class="dato-contacto">
+                    <img src="File/ubicacion.png" alt="Ubicación">
+                    <p>Vía. Safeguard Industrial, Cayma, Arequipa, Perú</p>
+                </div>
+
+            </div>
+
+
+            <!-- Recursos destacados — contenido destacado con enlaces internos -->
+            <div class="recursos-destacados">
+                <h3>Recursos Destacados</h3>
+                <ul>
+                    <!-- Enlace interno al blog -->
+                    <li>
+                        <a href="../BlogGuias/BlogGuias.html">Blog y guías de seguridad industrial</a>
+                    </li>
+                    <!-- Enlace interno al catálogo -->
+                    <li>
+                        <a href="../Catalogo/Catalogo.html">Información de productos y catálogo</a>
+                    </li>
+                    <!-- Enlace interno al mapa -->
+                    <li>
+                        <a href="../DistribucionMap/DistribucionMap.html">Encuentra un distribuidor cercano</a>
+                    </li>
+                    <!-- Enlace interno a la calculadora -->
+                    <li>
+                        <a href="../Calculadora/Calculadora.html">Calculadora de EPP para tu empresa</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER — Pie de página
+     ============================================================ -->
+<footer class="footer">
+    <p>© 2026 – Valhalla Industrial. Todos los derechos reservados.</p>
+    <div>
+        <a href="../EnlacesRapidos/EnlacesRapidos.html">Más Enlaces</a> &nbsp;|&nbsp;
+        <a href="../PanelInventario/PanelInventario.html">Inventario (Interno)</a>
+    </div>
+</footer>
+
+
+</body>
+</html>
